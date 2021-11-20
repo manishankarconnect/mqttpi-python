@@ -19,8 +19,9 @@ Check "Active: active (running)" in the output.
 
 
 ### MQTT Publisher (Windows PC):
-
-Have Python3 on Windows and install paho-mqtt using the below command.
+#### Install paho-mqtt in PC:
+Install Python3 on Windows and install `paho-mqtt` using the command
+### 
     pip3 install paho-mqtt
 
 
@@ -32,7 +33,7 @@ Have Python3 on Windows and install paho-mqtt using the below command.
 
 ### How to Run the MQTT:
 
-1. Now open "mqttpc.py" and provide the pi ip-address as "MQTT_SERVER"
+1. Open "mqttpc.py" and provide the pi ip-address as "MQTT_SERVER"
 2. Run the "mqttpc.py" in Windows using python, which acts a publisher.
 3. Now the messages are sent to the broker (which is pi).
 4. Now run the "mqttpi.py" in pi, which act as a subscriber and check the messages sent by windows is received by the pi.
