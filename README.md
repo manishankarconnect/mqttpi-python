@@ -14,14 +14,14 @@ Use ***Raspberry Pi 4 Model B*** for setting up.
     sudo systemctl enable mosquitto
 
 #### Verify Broker Active:
-    `sudo systemctl status mosquitto`
+    sudo systemctl status mosquitto
 Check "Active: active (running)" in the output.
 
 
 ### MQTT Publisher (Windows PC):
 
 Have Python3 on Windows and install paho-mqtt using the below command.
-    `pip3 install paho-mqtt`
+    pip3 install paho-mqtt
 
 
 ### MQTT Subscriber (Raspberry Pi):
