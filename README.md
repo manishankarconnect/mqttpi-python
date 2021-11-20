@@ -28,3 +28,12 @@ MQTT Subscriber (Raspberry Pi):
 Install paho-mqtt in pi:
     sudo pip3 install paho-mqtt
 
+
+How to Run the MQTT:
+
+Now open "mqttpc.py" and provide the pi ip-address as "MQTT_SERVER"
+Run the "mqttpc.py" in Windows using python, which acts a publisher.
+Now the messages are sent to the broker (which is pi).
+
+Now run the "mqttpi.py" in pi, which act as a subscriber and check the messages sent by windows is received by the pi.
+
