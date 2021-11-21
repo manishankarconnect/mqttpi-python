@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  type="text/css" href="css/style.css">
+</head>
+<body>
+
+<h1>Topics Input Slider</h1>
+
+<div class="slidecontainer">
+  <label for="Temp"> <b>Temperature:&nbsp;  </label>
+  <input type="range" min="0" max="100" value="50" class="slider" id="Tempid" name="Temp">  
+  <span id="Tempval"></span>
+
+  <p><label for="Vol"> <b>Volume: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
+  <input type="range" min="0" max="100" value="50" class="slider" id="Volid" name="Vol">  
+  <span id="Volval"></span>
+
+  <p><label for="Visc"> <b>Viscosity: &nbsp; &nbsp; &nbsp; &nbsp; </label>
+  <input type="range" min="0" max="100" value="50" class="slider" id="Viscid" name="Visc">  
+  <span id="Viscval"></span>
+
+
+</div>
+
+<script>
+   
+    var slider = document.getElementById("Tempid");
+    var output = document.getElementById("Tempval");
+    console.log(slider.value);
+    output.innerHTML = slider.value; // Display the default slider value.
+
+    slider.oninput = function() {        
+    output.innerHTML = this.value;
+    }
+
+    var sliderVol = document.getElementById("Volid");
+    var outputVol = document.getElementById("Volval");    
+    outputVol.innerHTML = sliderVol.value; // Display the default slider value.
+
+    sliderVol.oninput = function() {        
+    outputVol.innerHTML = this.value;
+    }
+
+    var sliderVisc = document.getElementById("Viscid");
+    var outputVisc = document.getElementById("Viscval");    
+    outputVisc.innerHTML = sliderVol.value; // Display the default slider value.
+
+    sliderVisc.oninput = function() {        
+    outputVisc.innerHTML = this.value;
+    }
+
+
+
+
+    // Update the current slider value (each time you drag the slider handle)
+ 
+</script>
+
+
+</body>
+</html>
