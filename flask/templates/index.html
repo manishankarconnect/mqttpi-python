@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
     <link rel="stylesheet"  type="text/css" href="css/style.css">
 </head>
 <body>
@@ -11,24 +11,32 @@
 <div class="slidecontainer">
   <label for="Temp"> <b>Temperature:&nbsp;  </label>
   <input type="range" min="0" max="100" value="50" class="slider" id="Tempid" name="Temp">  
-  <span id="Tempval"></span>
+  <form method = "GET">
+  <span id="Tempval" name="Tempval" ></span>
+  </form>
 
   <p><label for="Vol"> <b>Volume: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
   <input type="range" min="0" max="100" value="50" class="slider" id="Volid" name="Vol">  
-  <span id="Volval"></span>
+  <form method = "GET">
+  <span id="Volval" name="Volval"></span>
+  </form>
 
   <p><label for="Visc"> <b>Viscosity: &nbsp; &nbsp; &nbsp; &nbsp; </label>
   <input type="range" min="0" max="100" value="50" class="slider" id="Viscid" name="Visc">  
-  <span id="Viscval"></span>
-
-
+  <form method = "GET">
+  <span id="Viscval" name="Viscval"></span>
+  </form>
 </div>
+</form>
+
+<form method = "POST">
+<p>output is: {{ output }} </p>
+<form>
 
 <script>
    
     var slider = document.getElementById("Tempid");
     var output = document.getElementById("Tempval");
-    console.log(slider.value);
     output.innerHTML = slider.value; // Display the default slider value.
 
     slider.oninput = function() {        
@@ -57,6 +65,8 @@
     // Update the current slider value (each time you drag the slider handle)
  
 </script>
+
+
 
 
 </body>
