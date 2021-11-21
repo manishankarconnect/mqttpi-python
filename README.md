@@ -38,5 +38,7 @@ Install Python3 on Windows and install `paho-mqtt` using the command
 3. Now the messages are sent to the broker (which is pi).
 4. Now run the "mqttpi.py" in pi, which act as a subscriber and check the messages sent by windows is received by the pi.
 
+Note: 
+1. Single message publish: 1e12df6a563fcdc16811faf3233de4974eaf46ef
 
 Refer "MQTT Windows to Pi communication Python.mp4" for demo.
