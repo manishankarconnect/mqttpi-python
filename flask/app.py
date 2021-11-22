@@ -17,12 +17,14 @@ def index():
 
 @app.route("/", methods= ['POST', 'GET'])
 def read():
-    temp = request.form["Tempval"]
-    vol = request.form["Volval"]
-    visc = request.form["Viscval"]
-    print("Viscosity" + visc)
-    output = visc
-    return render_template('index.html',output=output)
+    if  request.method == 'POST':
+        temp = request.form.get("Temp")
+        vol = request.form.get("Vol")
+        visc = request.form.get("Visc")        
+        print(request.form)
+    else:
+        print(request.args)
+    return render_template('index.html', pTemp=temp, pVol=vol, pVisc=visc)
 
    
 if __name__ == '__main__':

@@ -2,72 +2,77 @@
 <html lang="en" dir="ltr">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
-    <link rel="stylesheet"  type="text/css" href="css/style.css">
+    <link rel="stylesheet"  type="text/css" href="{{ url_for('static',filename='styles/page.css') }}">
 </head>
 <body>
 
-<h1>Topics Input Slider</h1>
+<h1>MQTT Message Simulator</h1>
 
 <div class="slidecontainer">
-  <label for="Temp"> <b>Temperature:&nbsp;  </label>
-  <input type="range" min="0" max="100" value="50" class="slider" id="Tempid" name="Temp">  
-  <form method = "GET">
-  <span id="Tempval" name="Tempval" ></span>
+  
+  <form action="/" method="POST" id="form">
+  <label> <b>Temperature:&nbsp;  </label>    
+  <input type="range" min="0" max="100" class="slider" id="Tempid" name="Temp" value={{ pTemp }}>  
+  <span id="Tempval" name="Tempval" > {{ pTemp }} </span>
+  <p>
+  <label for="Vol"> <b>Volume: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
+  <input type="range" min="0" max="100" value={{ pVol }} class="slider" id="Volid" name="Vol">    
+  <span id="Volval" name="Volval">{{ pVol }}</span>
+  <p>
+  <label for="Visc"> <b>Viscosity: &nbsp; &nbsp; &nbsp; &nbsp; </label>
+  <input type="range" min="0" max="100" value={{ pVisc }} class="slider" id="Viscid" name="Visc">   
+  <span id="Viscval" name="Viscval">{{ pVisc }}</span>
   </form>
 
-  <p><label for="Vol"> <b>Volume: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </label>
-  <input type="range" min="0" max="100" value="50" class="slider" id="Volid" name="Vol">  
-  <form method = "GET">
-  <span id="Volval" name="Volval"></span>
-  </form>
 
-  <p><label for="Visc"> <b>Viscosity: &nbsp; &nbsp; &nbsp; &nbsp; </label>
-  <input type="range" min="0" max="100" value="50" class="slider" id="Viscid" name="Visc">  
-  <form method = "GET">
-  <span id="Viscval" name="Viscval"></span>
-  </form>
-</div>
-</form>
-
-<form method = "POST">
-<p>output is: {{ output }} </p>
-<form>
 
 <script>
    
     var slider = document.getElementById("Tempid");
     var output = document.getElementById("Tempval");
-    output.innerHTML = slider.value; // Display the default slider value.
+    output.innerHTML = slider.value; // Display the  slider value.
 
     slider.oninput = function() {        
     output.innerHTML = this.value;
     }
 
+    slider.onmouseup = function () {
+      document.getElementById("form").submit();
+    }
+
     var sliderVol = document.getElementById("Volid");
     var outputVol = document.getElementById("Volval");    
-    outputVol.innerHTML = sliderVol.value; // Display the default slider value.
+    outputVol.innerHTML = sliderVol.value; // Display the slider value.
 
     sliderVol.oninput = function() {        
     outputVol.innerHTML = this.value;
     }
 
+    sliderVol.onmouseup = function () {
+        document.getElementById("form").submit();
+    }
+
+
     var sliderVisc = document.getElementById("Viscid");
     var outputVisc = document.getElementById("Viscval");    
-    outputVisc.innerHTML = sliderVol.value; // Display the default slider value.
+    outputVisc.innerHTML = sliderVisc.value; // Display the  slider value.
 
     sliderVisc.oninput = function() {        
     outputVisc.innerHTML = this.value;
     }
 
+     sliderVisc.onmouseup = function () {
+        document.getElementById("form").submit();
+    }
+
+
+    
 
 
 
-    // Update the current slider value (each time you drag the slider handle)
- 
 </script>
 
-
-
+</div>
 
 </body>
 </html>

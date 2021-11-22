@@ -1,12 +1,12 @@
 .slidecontainer {
-    width: 100%; /* Width of the outside container */
+    width: 50%; /* Width of the outside container */
   }
   
   /* The slider itself */
   .slider {
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
-    width: 50%;
+    width: 25%;
     height: 10px;
     border-radius: 5px; 
     background: #d3d3d3; /* Grey background */
@@ -25,8 +25,8 @@
   .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     border-radius: 50%; 
     background: #04AA6D; /* Green background */
     cursor: pointer; /* Cursor on hover */
