@@ -18,10 +18,14 @@ def index():
 @app.route("/", methods= ['POST', 'GET'])
 def read():
     if  request.method == 'POST':
-        temp = request.form.get("Temp")
-        vol = request.form.get("Vol")
-        visc = request.form.get("Visc")        
+        if not request.form.get("reset"):        
+            temp = request.form.get("Temp")
+            vol = request.form.get("Vol")
+            visc = request.form.get("Visc")        
+        else:
+            temp = vol = visc = 50
         print(request.form)
+        
     else:
         print(request.args)
     return render_template('index.html', pTemp=temp, pVol=vol, pVisc=visc)
