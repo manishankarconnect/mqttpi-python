@@ -41,18 +41,17 @@ Install Python3 on Windows and install `paho-mqtt` using the command
 #### Note: 
 1. ***Single message pub/sub:***
    1. Tag: `Paho-MQTT-Single`
-<br>
+
 2. ***Multi message pub/sub:***
    1. Tag: `Paho-MQTT-Multiple`
    2. Added JSON for transmitting & receiving different data in payload.
-<br>
+
 3. ***Flask MQTT:***
    1. Run *flask/app.py*
    2. Tag: `Flask-MQTT-Release`
    3. Implemented Flask-MQTT to publish message.
     ![](demos\Flask-MQTT-Shot.jpg)
 
-<br>
 
 Refer below recordings for demo:
 1. `"MQTT Windows to Pi communication Python.mp4"` - Paho-MQTT.
